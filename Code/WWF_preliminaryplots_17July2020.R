@@ -1,6 +1,9 @@
-setwd("C:/Users/wfetzer/Desktop")
 
-fish=read.table("Isotope_FirstLook.txt", header = T)
+
+fish=read.table("Data/Isotope_FirstLook.txt", header = T)
+ages<-read.csv("Data/AgesToLink.csv", header=T)
+
+fish.aged<-merge(fish, ages, by="id_number")
 
 head(fish)
 dim(fish)
@@ -80,9 +83,18 @@ legend(6, 5, legend=c("LAT", "BBT", "BRC", "KOE", "WHS", "UTC", "SMB", "RBT"),
 
 #####LAT LENGTH VS CARBON
 
-plot(NULL, xlim=c(0,800), ylim= c(-40,-20), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="", type="n")
+plot(NULL, xlim=c(0,800), ylim= c(-40, -20), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="", type="n")
 
-points(lat$length, lat$C)
+lat.age<- subset(fish.aged, fish.aged$species == "LAT")
+
+lat.age.canyon<-subset(lat.age, lat.age$region=="canyon")
+lat.age.inflow<-subset(lat.age, lat.age$region=="inflow")
+lat.age.oh<-subset(lat.age, lat.age$region=="open_hills")
+
+points(lat.age.canyon$length, lat.age.canyon$C, cex=(lat.age.canyon$age)/8)
+points(lat.age.inflow$length, lat.age.inflow$C, cex=(lat.age.inflow$age)/8, col="darkblue")
+points(lat.age.oh$length, lat.age.oh$C, cex=(lat.age.oh$age)/8, col="goldenrod")
+
 
 axis(1, at=c(0,200,400,600,800),las=1, cex.axis=10/10)
 axis(2, at=c(-40, -35, -30, -25, -20),las=1, cex.axis=10/10)
