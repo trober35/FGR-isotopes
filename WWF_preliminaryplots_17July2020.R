@@ -114,7 +114,7 @@ axis(2, at=c(5,10,15,20),las=1, cex.axis=10/10)
 
 plot(NULL, xlim=c(0,800), ylim= c(-2,8), xlab="Length", ylab="Sulfur", xaxt="n", yaxt="n",main="", type="n")
 
-points(lat$length, lat$S)
+points(lat$length, lat$S,pch=16,col='blue')
 
 axis(1, at=c(0,200,400,600,800),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)

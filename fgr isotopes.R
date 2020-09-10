@@ -42,15 +42,20 @@ plot(geese_simmr_out, type = 'histogram')
 # Start of fish data
 
 LAT<-simmr_data_2020
-prey<-prey_species_simmr
+prey<-isoprey1
 TEFs<-TEFs_simmr
 
-LAT_simmr = simmr_load(mixtures = as.matrix(LAT[, 1:3]),
-                         source_names = TEFs_simmr$Sources,
-                         source_means = TEFs_simmr[,2:3],
-                         source_sds = TEFs_simmr[,4:5],
+LAT_simmr = simmr_load(mixtures = as.matrix(LAT[, 1:2]),
+                         source_names = prey$Sources,
+                         source_means = prey[,2:3],
+                         source_sds = prey[,4:5],
                          group = NULL)
-plot(LAT_simmr)
+plot(LAT_simmr,xlab = expression(paste(delta^13, "C (\u2030)",
+                                       sep = "")), 
+     ylab = expression(paste(delta^15, "N (\u2030)",
+                             sep = "")), 
+     title = 'LAT C vs. N')
+
 LAT_simmr_out = simmr_mcmc(LAT_simmr)
 summary(LAT_simmr_out, type = 'diagnostics',
         group = 1)
@@ -62,12 +67,18 @@ plot(LAT_simmr_out, type = 'histogram')
 
 #simmr with C and S
 
-LAT_simmrS = simmr_load(mixtures = as.matrix(LAT[, 1:3]),
-                       source_names = TEFs$Sources,
-                       source_means = TEFs[,2:4],
-                       source_sds = TEFs[,5:7],
-                       group = NULL)
-plot(LAT_simmrS)
+LAT_simmrS = simmr_load(mixtures = as.matrix(LAT[, 1:3])
+                       source_names = prey$Sources,
+                       source_means = prey[,2:4]
+                       source_sds = prey[,5:7]
+                       group = NULL
+
+plot(LAT_simmrS, xlab = expression(paste(delta^13, "C (\u2030)",
+                                        sep = "")), 
+     ylab = expression(paste(delta^34, "S (\u2030)",
+                             sep = "")), 
+     title = 'LAT C vs S')
+
 LAT_simmr_out = simmr_mcmc(LAT_simmrS)
 summary(LAT_simmr_out, type = 'diagnostics',
         group = 1)
