@@ -43,13 +43,15 @@ plot(geese_simmr_out, type = 'histogram')
 
 LAT<-simmr_data_2020
 prey<-isoprey1
+preys<-isoprey2
 TEFs<-TEFs_simmr
 
 LAT_simmr = simmr_load(mixtures = as.matrix(LAT[, 1:2]),
                          source_names = prey$Sources,
                          source_means = prey[,2:3],
-                         source_sds = prey[,4:5],
-                         group = NULL)
+                         source_sds = prey[,5:6],
+                        group= NULL)
+
 plot(LAT_simmr,xlab = expression(paste(delta^13, "C (\u2030)",
                                        sep = "")), 
      ylab = expression(paste(delta^15, "N (\u2030)",
@@ -66,12 +68,14 @@ prior_viz(LAT_simmr_out)
 plot(LAT_simmr_out, type = 'histogram')
 
 #simmr with C and S
-
-LAT_simmrS = simmr_load(mixtures = as.matrix(LAT[, 1:3])
-                       source_names = prey$Sources,
-                       source_means = prey[,2:4]
-                       source_sds = prey[,5:7]
-                       group = NULL
+LATCS<- csmixtures2020
+mix<-as.matrix(LATCS[,1:2])
+mix
+LAT_simmrS = simmr_load( mixtures = mix,
+                       source_names = preys$Sources,
+                       source_means = preys[,2:3],
+                       source_sds = preys[,4:5],
+                       group = NULL)
 
 plot(LAT_simmrS, xlab = expression(paste(delta^13, "C (\u2030)",
                                         sep = "")), 
