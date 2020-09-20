@@ -70,6 +70,7 @@ plot(LAT_simmr_out, type = 'histogram')
 #simmr with C and S
 LATCS<- csmixtures2020
 mix<-as.matrix(LATCS[,1:2])
+preys<-isoprey2
 mix
 LAT_simmrS = simmr_load( mixtures = mix,
                        source_names = preys$Sources,
