@@ -34,26 +34,31 @@ points(lat.age.inflow$length, lat.age.inflow$C, cex=(lat.age.inflow$age)/8, col=
 points(lat.age.oh$length, lat.age.oh$C, cex=(lat.age.oh$age)/8, col="goldenrod")
 
 #Carbon vs length in different regions
-plot(NULL, xlim=c(180,800), ylim= c(-36, -23), xlab="Length in mm", ylab=expression(paste(delta^{13}, "C")),main="Length vs.Carbon",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
 
 lat.canyon<-subset(lat, lat$region=="canyon")
 lat.inflow<-subset(lat, lat$region=="inflow")
 lat.oh<-subset(lat, lat$region=="open_hills")
 
 #canyon
-plot(NULL, xlim=c(180,800), ylim= c(-36, -23), xlab="Length in mm", ylab=expression(paste(delta^{13}, "C")),main="Length vs.Carbon",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
-points(lat.canyon$length, lat.canyon$C, cex=(lat.canyon$age)/8)
+plot(NULL, xlim=c(180,800), ylim= c(-36, -23), xlab="Length in mm", ylab=expression(paste(delta^{13}, "C")),main="LAT Length vs.Carbon in Canyon",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
+points(lat.canyon$length, lat.canyon$C, cex=(lat.canyon$age)/8,pch=17)
 #inflow
-plot(NULL, xlim=c(180,800), ylim= c(-36, -23), xlab="Length in mm", ylab=expression(paste(delta^{13}, "C")),main="Length vs.Carbon",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
-points(lat.inflow$length, lat.inflow$C, cex=(lat.inflow$age)/8, pch=16, col="darkblue")
+plot(NULL, xlim=c(180,800), ylim= c(-36, -23), xlab="Length in mm", ylab=expression(paste(delta^{13}, "C")),main="LAT Length vs.Carbon in Inflow",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
+points(lat.inflow$length, lat.inflow$C, cex=(lat.inflow$age)/8, pch=16, col="brown")
 #open hills
-plot(NULL, xlim=c(180,800), ylim= c(-36, -23), xlab="Length in mm", ylab=expression(paste(delta^{13}, "C")),main="Length vs.Carbon",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
-points(lat.oh$length, lat.oh$C, cex=(lat.oh$age)/8, pch=16, col="goldenrod")
+plot(NULL, xlim=c(180,800), ylim= c(-36, -23), xlab="Length in mm", ylab=expression(paste(delta^{13}, "C")),main="LAT Length vs.Carbon in OH",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
+points(lat.oh$length, lat.oh$C, cex=(lat.oh$age)/8, pch=16, col="forestgreen")
 
+#all together
+plot(NULL, xlim=c(180,800), ylim= c(-36, -23), xlab="Length in mm", ylab=expression(paste(delta^{13}, "C")),main="LAT Length vs.Carbon",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
+points(lat.canyon$length, lat.canyon$C, cex=(lat.canyon$age)/8,pch=17)
+points(lat.inflow$length, lat.inflow$C, cex=(lat.inflow$age)/8, pch=16, col="brown")
+points(lat.oh$length, lat.oh$C, cex=(lat.oh$age)/8, pch=18, col="forestgreen")
 
+legend(200,-24, legend=c("Canyon","Inflow", "Open Hills"), pch=c(17,16,18),col = c("black","brown","forestgreen"))
 
 #lat length vs S
-plot(NULL, xlim=c(180,800), ylim= c(0,8), xlab="Length in mm", ylab=expression(paste(delta^{34}, "S")),main="Length vs.sulfur",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
+plot(NULL, xlim=c(180,800), ylim= c(0,8), xlab="Length in mm", ylab=expression(paste(delta^{34}, "S")),main="LAT Length vs.Sulfur",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
 
 points(lat$length, lat$S, pch=16, col="blue")
 
