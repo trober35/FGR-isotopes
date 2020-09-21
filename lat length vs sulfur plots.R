@@ -51,4 +51,13 @@ plot(NULL, xlim=c(180,800), ylim= c(0,8), xlab="Length in mm", ylab=expression(p
 points(lat.july$length, lat.july$S,pch= 16, col="blue")
 #august
 plot(NULL, xlim=c(180,800), ylim= c(0,8), xlab="Length in mm", ylab=expression(paste(delta^{34}, "S")),main="LAT Length vs.Sulfur",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
-points(lat.august$length, lat.august$S,pch= 16, col="green")
+points(lat.august$length, lat.august$S,pch= 16, col="goldenrod")
+
+#all together
+plot(NULL, xlim=c(180,800), ylim= c(0,8), xlab="Length in mm", ylab=expression(paste(delta^{34}, "S")),main="LAT Length vs.Sulfur",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
+points(lat.june$length, lat.june$S,pch= 16, col="red")
+points(lat.july$length, lat.july$S,pch= 16, col="blue")
+points(lat.august$length, lat.august$S,pch= 16, col="goldenrod")
+
+
+legend(180,8, legend=c("June","July", "August"), pch=c(16,16,16), col=c("red","dark blue", "goldenrod"))
