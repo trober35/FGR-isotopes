@@ -27,8 +27,28 @@ points(lat.oh$length, lat.oh$S, cex=(lat.oh$age)/8, pch=16, col="goldenrod")
 
 #all together
 plot(NULL, xlim=c(180,800), ylim= c(0,8), xlab="Length in mm", ylab=expression(paste(delta^{34}, "S")),main="LAT Length vs.Sulfur",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
-points(lat.canyon$length, lat.canyon$S, cex=(lat.canyon$age)/8,pch= 16, col="red")
+points(lat.canyon$length, lat.canyon$S, pch= 16, col="red")
 points(lat.inflow$length, lat.inflow$S, cex=(lat.inflow$age)/8, pch=16, col="darkblue")
 points(lat.oh$length, lat.oh$S, cex=(lat.oh$age)/8, pch=16, col="goldenrod")
 
 legend(200,8, legend=c("Inflow","Open Hills", "Canyon"), pch=c(16,16,16), col=c("red","dark blue", "goldenrod"))
+
+
+#separated  by sampling date.
+
+
+lat.june<-subset(lat, lat$date=="43641"|lat$date=="43642")
+lat.july<-subset(lat, lat$date=="43663"|lat$date=="43669"|lat$date=="43670"|lat$date=="43662")
+lat.august<-subset(lat, lat$date=="43704"|lat$date=="43706")
+
+
+#june
+plot(NULL, xlim=c(180,800), ylim= c(0,8), xlab="Length in mm", ylab=expression(paste(delta^{34}, "S")),main="LAT Length vs.Sulfur",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
+points(lat.june$length, lat.june$S,pch= 16, col="red")
+
+#july
+plot(NULL, xlim=c(180,800), ylim= c(0,8), xlab="Length in mm", ylab=expression(paste(delta^{34}, "S")),main="LAT Length vs.Sulfur",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
+points(lat.july$length, lat.july$S,pch= 16, col="blue")
+#august
+plot(NULL, xlim=c(180,800), ylim= c(0,8), xlab="Length in mm", ylab=expression(paste(delta^{34}, "S")),main="LAT Length vs.Sulfur",cex.lab=1.5, cex.axis=1.5, cex.main=1.5)
+points(lat.august$length, lat.august$S,pch= 16, col="green")
