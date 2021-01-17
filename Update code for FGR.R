@@ -389,7 +389,7 @@ points(latOHl$length, latOHl$S, pch=17, col="red")
 
 ############################### muscle puppies vs. S  ###########################
 
-plot(NULL, xlim=c(100,500), ylim= c(0,8), xlab="Length", ylab="Sulfur", xaxt="n", yaxt="n",main="LAT puppies liver vs. length", type="n")
+plot(NULL, xlim=c(100,500), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT puppies liver vs. length", type="n")
 axis(1, at=c(100, 200, 300, 400, 500),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 points(puppiesliv$length, puppiesliv$S, pch=16, col="red")
@@ -397,14 +397,14 @@ points(puppiesliv$length, puppiesliv$S, pch=16, col="red")
 
 ########################## muscle pups vs. S   #############################
 
-plot(NULL, xlim=c(460, 750), ylim= c(0,8), xlab="Length", ylab="Sulfur", xaxt="n", yaxt="n",main="LAT pups liver C vs. length", type="n")
+plot(NULL, xlim=c(460, 750), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT pups liver C vs. length", type="n")
 axis(1, at=c(460, 500, 550, 600, 650, 700, 750),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
 points(pupsliv$length, pupsliv$S, pch=17, col="red")
 #points(pupsmusc$length, pupsmusc$S, pch=16, col="darkblue")
 #################### muscle trophy vs. S ###############################
-plot(NULL, xlim=c(700,1100), ylim= c(0,8), xlab="Length", ylab="Sulfur", xaxt="n", yaxt="n",main="LAT trophy liver C vs. length", type="n")
+plot(NULL, xlim=c(700,1100), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT trophy liver C vs. length", type="n")
 axis(1, at=c(700,800,900,1000,1100),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
@@ -414,7 +414,7 @@ points(trophymusc$length, trophymusc$S, pch=18, col="blue")
 #################  seasonal separation in muscle and liver S values   #############################################################
 
 
-plot(NULL, xlim=c(100,500), ylim= c(0,8), xlab="Length", ylab="Sulfur", xaxt="n", yaxt="n",main="LAT puppies summer M&L vs. length", type="n")
+plot(NULL, xlim=c(100,500), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT puppies summer M&L vs. length", type="n")
 axis(1, at=c(100, 200, 300, 400, 500),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
@@ -424,7 +424,7 @@ legend(400, 8, legend=c("Muscle", "Liver"),
        pch=c(16, 17), col=c("blue", "red")
        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
 ################ fall   ##########################
-plot(NULL, xlim=c(100,500), ylim= c(0,8), xlab="Length", ylab="Sulfur", xaxt="n", yaxt="n",main="LAT puppies FALL M&L vs. length", type="n")
+plot(NULL, xlim=c(100,500), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT puppies FALL M&L vs. length", type="n")
 axis(1, at=c(100, 200, 300, 400, 500),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
@@ -436,7 +436,7 @@ legend(400, 8, legend=c("Muscle", "Liver"),
        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
 ##################### winter  ####################
 
-plot(NULL, xlim=c(100,500), ylim= c(0,8), xlab="Length", ylab="Sulfur", xaxt="n", yaxt="n",main="LAT puppies WINTER M&L vs. length", type="n")
+plot(NULL, xlim=c(100,500), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT puppies WINTER M&L vs. length", type="n")
 axis(1, at=c(100, 200, 300, 400, 500),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
@@ -448,19 +448,19 @@ legend(400, 8, legend=c("Muscle", "Liver"),
        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
 ##################   spring  ######################
 
-plot(NULL, xlim=c(100,500), ylim= c(0,8), xlab="Length", ylab="Sulfur", xaxt="n", yaxt="n",main="LAT puppies SPRING M&L vs. length", type="n")
+plot(NULL, xlim=c(100,500), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT puppies SPRING M&L vs. length", type="n")
 axis(1, at=c(100, 200, 300, 400, 500),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
 
 points(LATpuppySpM$length, LATpuppySpM$S, pch=16, col="blue")
- points(LATpuppySpL$length, LATpuppySpL$S, pch=16, col="red")  # liver if you want 
+ points(LATpuppySpL$length, LATpuppySpL$S, pch=17, col="red")  # liver if you want 
 legend(400, 8, legend=c("Muscle", "Liver"), 
        pch=c(16, 17), col=c("blue", "red")
        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
 ################### pups in individual seasons  ###########################################################################################################
 
-plot(NULL, xlim=c(460, 750), ylim= c(0,8), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="LAT pups summer M&L vs. length", type="n")
+plot(NULL, xlim=c(460, 750), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT pups summer M&L vs. length", type="n")
 axis(1, at=c(460, 500, 550, 600, 650, 700, 750),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
@@ -470,7 +470,7 @@ legend(680, 8, legend=c("Muscle", "Liver"),
        pch=c(16, 17), col=c("blue", "red")
        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
 ################ fall   ##########################
-plot(NULL, xlim=c(460, 750), ylim= c(0,8), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="LAT pups FALL M&L vs. length", type="n")
+plot(NULL, xlim=c(460, 750), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT pups FALL M&L vs. length", type="n")
 axis(1, at=c(460, 500, 550, 600, 650, 700, 750),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
@@ -481,7 +481,7 @@ legend(680, 8, legend=c("Muscle", "Liver"),
        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
 ##################### winter  ####################
 
-plot(NULL, xlim=c(460, 750), ylim= c(0,8), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="LAT pups WINTER M&L vs. length", type="n")
+plot(NULL, xlim=c(460, 750), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT pups WINTER M&L vs. length", type="n")
 axis(1, at=c(460, 500, 550, 600, 650, 700, 750),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
@@ -492,18 +492,18 @@ legend(680, 8, legend=c("Muscle", "Liver"),
        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
 ##################   spring  ######################
 
-plot(NULL, xlim=c(460, 750), ylim= c(0,8), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="LAT pups SPRING M&L vs. length", type="n")
+plot(NULL, xlim=c(460, 750), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT pups SPRING M&L vs. length", type="n")
 axis(1, at=c(460, 500, 550, 600, 650, 700, 750),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
 points(LATpupSpM$length, LATpupSpM$S, pch=16, col="blue")
- points(LATpupSpL$length, LATpupSpL$S, pch=16, col="red")  # liver if you want 
+ points(LATpupSpL$length, LATpupSpL$S, pch=17, col="red")  # liver if you want 
 legend(680, 8, legend=c("Muscle", "Liver"), 
        pch=c(16, 17), col=c("blue", "red")
        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
 ##################################################################################  trophy size class ##########################################################
 
-plot(NULL, xlim=c(700,1100), ylim= c(0,8), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="LAT trophy SUMMER M&L vs. length", type="n")
+plot(NULL, xlim=c(700,1100), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT trophy SUMMER M&L vs. length", type="n")
 axis(1, at=c(700,800,900,1000,1100),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
@@ -514,7 +514,7 @@ legend(1000, 8, legend=c("Muscle", "Liver"),
        pch=c(16, 17), col=c("blue", "red")
        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
 ################ fall   ##########################
-plot(NULL, xlim=c(700,1100), ylim= c(0,8), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="LAT trophy FALL M&L vs. length", type="n")
+plot(NULL, xlim=c(700,1100), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT trophy FALL M&L vs. length", type="n")
 axis(1, at=c(700,800,900,1000,1100),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
@@ -525,7 +525,7 @@ legend(1000, 8, legend=c("Muscle", "Liver"),
        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
 ##################   spring  ######################
 
-plot(NULL, xlim=c(700,1100), ylim= c(0,8), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="LAT trophy SPRING M&L vs. length", type="n")
+plot(NULL, xlim=c(700,1100), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT trophy SPRING M&L vs. length", type="n")
 axis(1, at=c(700,800,900,1000,1100),las=1, cex.axis=10/10)
 axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
 
@@ -537,7 +537,7 @@ points(LATtrophySpM$length, LATtrophySpM$S, pch=16, col="blue")
         , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
  
 ######################################################  ONE GRAPH THREE REGIONS ###################### 
- plot(NULL, xlim=c(0,1200), ylim= c(0,8), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="LAT liver length vs. SULFUR", type="n")
+ plot(NULL, xlim=c(0,1200), ylim= c(0,8), xlab="Length", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="LAT liver length vs. SULFUR", type="n")
  axis(1, at=c(0,200,400,600,800, 1000,1200),las=1, cex.axis=10/10)
  axis(2, at=c(-2,0,2,4,6,8),las=1, cex.axis=10/10)
  
@@ -550,13 +550,13 @@ points(LATtrophySpM$length, LATtrophySpM$S, pch=16, col="blue")
         , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
 
  ####### EACH SEASON
- plot(NULL, xlim=c(-38,-23), ylim= c(0,8), xlab="CARBON", ylab="Nitrogen", xaxt="n", yaxt="n",main="C vs. N all lat topes muscle", type="n")
+ plot(NULL, xlim=c(-38,-23), ylim= c(0,8), xlab="CARBON", ylab=expression(paste(delta^{34}, "S")), xaxt="n", yaxt="n",main="C vs. N all lat topes muscle", type="n")
  axis(1, at=c(-38, -34, -30, -26, -24),las=1, cex.axis=10/10)
  axis(2, at=c(0,2,4,6,8),las=1, cex.axis=10/10)
  
- points(latIFm$N, latIFm$S, pch=16, col="blue")
- points(latOHm$N, latOHm$S, pch=17, col="red")
- points(latCm$N, latCm$S, pch=18, col="cyan")
+ points(latIFm$C, latIFm$S, pch=16, col="blue")
+ points(latOHm$C, latOHm$S, pch=17, col="red")
+ points(latCm$C, latCm$S, pch=18, col="cyan")
  
  legend(-25, 20, legend=c("IF" , "OH", "Can"), 
         pch=c(16, 17, 18), col=c("blue", "red", "cyan")
