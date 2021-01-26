@@ -54,6 +54,10 @@ points(amp$C,amph$N, col="dark red",pch=13)
 musclelat<-filter(lat, tissue=="muscle")
 liverlat<-filter(lat, tissue=="liver")
 
+latpuppies<-filter(lat,length<=482)
+latpups<-filter(lat,length %in%483:711)
+lattrophy<-filter(lat,length>=711 )
+
 
 latIFm<-filter(musclelat, region=="inflow")
 latIFl<-filter(liverlat, region=="inflow")
@@ -561,5 +565,95 @@ points(LATtrophySpM$length, LATtrophySpM$S, pch=16, col="blue")
  legend(-25, 20, legend=c("IF" , "OH", "Can"), 
         pch=c(16, 17, 18), col=c("blue", "red", "cyan")
         , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
+ 
+########################################################## SEX ######################
+ malelatpuppies<- filter(latpuppies,sex=='m')
+ femalelatpuppies<- filter(latpuppies,sex=='f')
+ malelatpups<- filter(latpups,sex=='m')
+ femalelatpups<- filter(latpups,sex=='f')
+ malelattrophy<- filter(lattrophy,sex=='m')
+ femalelattrophy<- filter(lattrophy,sex=='f')
+ 
+ malelatpuppies<- filter(malelatpuppies,tissue=='liver')
+ femalelatpuppies<- filter(femalelatpuppies,tissue=='liver')
+ malelatpups<- filter(malelatpups,tissue=='liver')
+ femalelatpups<- filter(femalelatpups,tissue=='liver')
+ malelattrophy<- filter(malelattrophy,tissue=='liver')
+ femalelattrophy<- filter(femalelattrophy,tissue=='liver')
+ 
+ 
+ 
+ ### puppies ###
+ plot(NULL, xlim=c(-38,-23), ylim= c(10,20), xlab="Carbon", ylab="Nitrogen", xaxt="n", yaxt="n",main="Male vs Female LAT puppies", type="n")
+ axis(1, at=c(-38, -34, -30, -26, -24),las=1, cex.axis=10/10)
+ axis(2, at=c(10,12,14,16,18,20),las=1, cex.axis=10/10)
+ 
+ points(malelatpuppies$C, malelatpuppies$N, pch=16, col="blue")
+ points(femalelatpuppies$C, femalelatpuppies$N, pch=17, col="red")
+
+ 
+ legend(-25, 20, legend=c("Male" , "Female"), 
+        pch=c(16, 17), col=c("blue", "red")
+        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
+###  pups  ###
+ 
+ plot(NULL, xlim=c(-37,-22), ylim= c(10,20), xlab="Carbon", ylab="Nitrogen", xaxt="n", yaxt="n",main="Male vs. Female LAT pups", type="n")
+ axis(1, at=c( -36, -33, -30, -27, -24),las=1, cex.axis=10/10)
+ axis(2, at=c(10,15,20),las=1, cex.axis=10/10)
+ 
+ points(malelatpups$C, malelatpups$N, pch=16, col="blue")
+ points(femalelatpups$C, femalelatpups$N, pch=17, col="red")
+
+ 
+ legend(-25, 20, legend=c("Male" , "Female"), 
+        pch=c(16, 17), col=c("blue", "red")
+        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
+ ### trophy ###
+ 
+ plot(NULL, xlim=c(-37,-22), ylim= c(10,20), xlab="Carbon", ylab="Nitrogen", xaxt="n", yaxt="n",main="Male vs. Female LAT trophy", type="n")
+ axis(1, at=c( -36, -33, -30, -27, -24),las=1, cex.axis=10/10)
+ axis(2, at=c(10,15,20),las=1, cex.axis=10/10)
+ 
+ points(malelattrophy$C, malelattrophy$N, pch=16, col="blue")
+ points(femalelattrophy$C, femalelattrophy$N, pch=17, col="red")
+ 
+ 
+ legend(-25, 20, legend=c("Male" , "Female"), 
+        pch=c(16, 17), col=c("blue", "red")
+        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
+ 
+ ########### length vs M & F   ###############################################
+ 
+ plot(NULL, xlim=c(200,500), ylim= c(-40, -25), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="LAT puppies muscle vs. length", type="n")
+ axis(1, at=c( 200, 300, 400, 500),las=1, cex.axis=10/10)
+ axis(2, at=c(-40, -35, -30, -25, -20),las=1, cex.axis=10/10)
+ 
+ points(malelatpuppies$length, malelatpuppies$C, pch=16, col="blue")
+ points(femalelatpuppies$length, femalelatpuppies$C, pch=17, col="red")
+ legend(450, -25, legend=c("Male" , "Female"), 
+        pch=c(16, 17), col=c("blue", "red")
+        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
+ 
+ plot(NULL, xlim=c(460, 750), ylim= c(-40, -20), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="LAT pups liver C vs. length", type="n")
+ axis(1, at=c(460, 500, 550, 600, 650, 700, 750),las=1, cex.axis=10/10)
+ axis(2, at=c(-40, -35, -30, -25, -20),las=1, cex.axis=10/10)
+ 
+ points(malelatpups$length, malelatpups$C, pch=16, col="blue")
+ points(femalelatpups$length, femalelatpups$C, pch=17, col="red")
+ legend(700, -20, legend=c("Male" , "Female"), 
+        pch=c(16, 17), col=c("darkblue", "red")
+        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
+ 
+ plot(NULL, xlim=c(700,1100), ylim= c(-40, -20), xlab="Length", ylab="Carbon", xaxt="n", yaxt="n",main="LAT trophy muscle vs. length", type="n")
+ axis(1, at=c(700,800,900,1000,1100),las=1, cex.axis=10/10)
+ axis(2, at=c(-40, -35, -30, -25, -20),las=1, cex.axis=10/10)
+ 
+ points(malelattrophy$length, malelattrophy$C, pch=16, col="blue")
+ points(femalelattrophy$length, femalelattrophy$C, pch=17, col="red")
+ legend(-25, 20, legend=c("Male" , "Female"), 
+        pch=c(16, 17), col=c("blue", "red")
+        , bty="n", cex=1, pt.cex=1, lty=NULL, merge=FALSE, trace=FALSE)
+ 
+ 
  
  
